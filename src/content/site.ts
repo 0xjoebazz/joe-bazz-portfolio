@@ -3,6 +3,16 @@ type NavLink = {
   href: string;
 };
 
+export const logo: {
+  src: string;
+  width: number;
+  height: number;
+} = {
+  src: "/images/joe-bazz-mark.png",
+  width: 335,
+  height: 227,
+};
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -33,6 +43,6 @@ export const portrait: {
   src: string | null;
   alt: string;
 } = {
-  src: null,
-  alt: "Portrait of Enoch Josiah (JOE BAZZ)",
+  src: "/images/joe-bazz-portrait.png",
+  alt: "Enoch Josiah (JOE BAZZ) working at a laptop in a dimly lit, blue-toned workspace.",
 };

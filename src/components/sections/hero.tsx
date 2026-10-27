@@ -43,17 +43,18 @@ export function Hero() {
               aria-hidden="true"
               className="absolute inset-8 rounded-full bg-accent/15 blur-3xl"
             />
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-subtle bg-background-secondary shadow-[0_0_3rem_-1.5rem] shadow-accent/50 sm:aspect-[4/5]">
+            <div className="relative aspect-square overflow-hidden rounded-xl border border-subtle bg-background-secondary shadow-[0_0_3rem_-1.5rem] shadow-accent/50 lg:aspect-[4/5]">
               {portrait.src ? (
                 <Image
                   src={portrait.src}
                   alt={portrait.alt}
                   fill
-                  sizes="(max-width: 767px) 100vw, 40vw"
-                  className="object-cover"
+                  priority
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                  className="object-cover object-[45%_30%]"
                 />
               ) : (
-                // Temporary portrait placeholder; replace when a real portrait is available.
+                // Keep the placeholder available when no portrait is configured.
                 <div className="flex h-full items-center justify-center bg-surface">
                   <span
                     aria-hidden="true"
