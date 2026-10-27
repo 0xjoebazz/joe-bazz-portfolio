@@ -2,6 +2,8 @@ import { Header } from "@/components/layout/header";
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { Hero } from "@/components/sections/hero";
+import { ProjectsSection } from "@/components/sections/projects-section";
+import { ContactSection } from "@/components/sections/contact-section";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ServiceCard } from "@/components/ui/service-card";
@@ -92,18 +94,8 @@ export default function Home() {
             </div>
           </Container>
         </Section>
-        {/* Temporary placeholder section; replace in a later milestone. */}
-        <Section id="projects">
-          <Container>
-            <h2>Projects</h2>
-          </Container>
-        </Section>
-        {/* Temporary placeholder section; replace in a later milestone. */}
-        <Section id="contact">
-          <Container>
-            <h2>Contact</h2>
-          </Container>
-        </Section>
+        <ProjectsSection />
+        <ContactSection />
       </main>
     </>
   );

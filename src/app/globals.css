@@ -7,6 +7,7 @@
   --surface: #0a1822;
   --accent: #20e6ff;
   --accent-secondary: #00bcd4;
+  --glow-purple: #8b5cf6;
   --foreground: #f2f7fa;
   --muted: #a7bac6;
   --subtle-border: rgb(32 230 255 / 14%);
@@ -19,6 +20,7 @@
   --color-surface: var(--surface);
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
+  --color-glow-purple: var(--glow-purple);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle-border);

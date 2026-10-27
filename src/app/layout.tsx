@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { CursorGlow } from "@/components/effects/cursor-glow";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -29,7 +30,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background font-body text-foreground">
-        {children}
+        <CursorGlow />
+        <div className="relative z-10 min-h-full">{children}</div>
       </body>
     </html>
   );

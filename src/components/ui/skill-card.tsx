@@ -1,3 +1,5 @@
+import { SkillChip } from "@/components/ui/skill-chip";
+
 type SkillCardProps = {
   category: string;
   items: readonly string[];
@@ -9,12 +11,7 @@ export function SkillCard({ category, items }: SkillCardProps) {
       <h3 className="mb-5 text-xl leading-snug">{category}</h3>
       <ul className="flex flex-wrap gap-2">
         {items.map((item) => (
-          <li
-            key={item}
-            className="max-w-full break-words rounded-md border border-subtle bg-background-secondary/80 px-3 py-1.5 text-sm text-foreground"
-          >
-            {item}
-          </li>
+          <SkillChip key={item}>{item}</SkillChip>
         ))}
       </ul>
     </article>
