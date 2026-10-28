@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/sections/contact-form";
+import { SocialLinks } from "@/components/ui/social-links";
 import { contact } from "@/content/contact";
 
 export function ContactSection() {
@@ -25,21 +26,7 @@ export function ContactSection() {
               </a>
             </div>
             <nav aria-label="Social profiles">
-              <ul className="flex flex-wrap gap-x-5 gap-y-2">
-                {contact.socials.map(({ label, url }) => (
-                  <li key={label}>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${label} profile (opens in a new tab)`}
-                      className="inline-flex min-h-11 items-center text-muted underline-offset-4 hover:text-accent hover:underline"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <SocialLinks socials={contact.socials} />
             </nav>
           </div>
           <ContactForm />

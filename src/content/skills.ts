@@ -1,6 +1,13 @@
+import type { BrandIconKey } from "@/components/ui/brand-icon";
+
+export type SkillItem = {
+  name: string;
+  icon: BrandIconKey;
+};
+
 type SkillCategory = {
   category: string;
-  items: readonly string[];
+  items: readonly SkillItem[];
 };
 
 export const skillsHeading = "Skills & Technologies";
@@ -8,18 +15,39 @@ export const skillsHeading = "Skills & Technologies";
 export const skillCategories = [
   {
     category: "Frontend Development",
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+    items: [
+      { name: "HTML", icon: "html5" },
+      { name: "CSS", icon: "css" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "Tailwind CSS", icon: "tailwindcss" },
+    ],
   },
   {
     category: "UI/UX and Design",
-    items: ["Figma", "Framer", "Adobe Illustrator"],
+    items: [
+      { name: "Figma", icon: "figma" },
+      { name: "Framer", icon: "framer" },
+      { name: "Adobe Illustrator", icon: "adobeIllustrator" },
+    ],
   },
   {
     category: "Website Platforms",
-    items: ["Wix", "Squarespace", "Webflow", "WordPress", "Shopify"],
+    items: [
+      { name: "Wix", icon: "wix" },
+      { name: "Squarespace", icon: "squarespace" },
+      { name: "Webflow", icon: "webflow" },
+      { name: "WordPress", icon: "wordpress" },
+      { name: "Shopify", icon: "shopify" },
+    ],
   },
   {
     category: "Additional Capabilities",
-    items: ["GoHighLevel", "AI Integrations", "Website Animations"],
+    items: [
+      { name: "GoHighLevel", icon: "goHighLevel" },
+      { name: "AI Integrations", icon: "aiIntegrations" },
+      { name: "Website Animations", icon: "websiteAnimations" },
+    ],
   },
 ] satisfies readonly SkillCategory[];
