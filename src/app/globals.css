@@ -85,6 +85,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-motion] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

@@ -3,6 +3,11 @@ import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ui/project-card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Reveal } from "@/components/motion/reveal";
+import {
+  StaggerList,
+  StaggerListItem,
+} from "@/components/motion/stagger";
 import { projects, projectsSection } from "@/content/projects";
 
 function ProjectsComingSoon() {
@@ -40,21 +45,25 @@ export function ProjectsSection() {
     <Section id="projects" aria-labelledby="projects-heading">
       <Container>
         <div className="space-y-10">
-          <SectionHeading
-            id="projects-heading"
-            title={projectsSection.heading}
-            intro={projectsSection.intro}
-          />
+          <Reveal>
+            <SectionHeading
+              id="projects-heading"
+              title={projectsSection.heading}
+              intro={projectsSection.intro}
+            />
+          </Reveal>
           {projects.length === 0 ? (
-            <ProjectsComingSoon />
+            <Reveal>
+              <ProjectsComingSoon />
+            </Reveal>
           ) : (
-            <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <StaggerList className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {projects.map((project) => (
-                <li key={project.id} className="min-w-0">
+                <StaggerListItem key={project.id} className="min-w-0">
                   <ProjectCard project={project} />
-                </li>
+                </StaggerListItem>
               ))}
-            </ul>
+            </StaggerList>
           )}
         </div>
       </Container>

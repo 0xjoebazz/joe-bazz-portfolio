@@ -3,6 +3,7 @@ import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactForm } from "@/components/sections/contact-form";
 import { SocialLinks } from "@/components/ui/social-links";
+import { Reveal } from "@/components/motion/reveal";
 import { contact } from "@/content/contact";
 
 export function ContactSection() {
@@ -10,26 +11,30 @@ export function ContactSection() {
     <Section id="contact" aria-labelledby="contact-heading">
       <Container>
         <div className="grid min-w-0 items-start gap-10 lg:grid-cols-2 lg:gap-16">
-          <div className="min-w-0 space-y-8">
-            <SectionHeading
-              id="contact-heading"
-              title={contact.copy.heading}
-              intro={contact.copy.intro}
-            />
-            <div className="space-y-2">
-              <p className="font-medium">{contact.copy.directEmailLabel}</p>
-              <a
-                href={`mailto:${contact.email}`}
-                className="inline-flex min-h-11 max-w-full items-center break-all text-accent underline-offset-4 hover:underline"
-              >
-                {contact.email}
-              </a>
+          <Reveal>
+            <div className="min-w-0 space-y-8">
+              <SectionHeading
+                id="contact-heading"
+                title={contact.copy.heading}
+                intro={contact.copy.intro}
+              />
+              <div className="space-y-2">
+                <p className="font-medium">{contact.copy.directEmailLabel}</p>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="inline-flex min-h-11 max-w-full items-center break-all text-accent underline-offset-4 hover:underline"
+                >
+                  {contact.email}
+                </a>
+              </div>
+              <nav aria-label="Social profiles">
+                <SocialLinks socials={contact.socials} />
+              </nav>
             </div>
-            <nav aria-label="Social profiles">
-              <SocialLinks socials={contact.socials} />
-            </nav>
-          </div>
-          <ContactForm />
+          </Reveal>
+          <Reveal>
+            <ContactForm />
+          </Reveal>
         </div>
       </Container>
     </Section>
