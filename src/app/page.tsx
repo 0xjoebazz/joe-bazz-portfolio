@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { Section } from "@/components/layout/section";
 import { Container } from "@/components/layout/container";
 import { Hero } from "@/components/sections/hero";
@@ -111,6 +112,7 @@ export default function Home() {
           <ProjectsSection />
           <ContactSection />
         </main>
+        <Footer />
       </>
     </MotionPreferencesProvider>
   );

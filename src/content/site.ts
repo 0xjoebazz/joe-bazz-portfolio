@@ -39,6 +39,13 @@ export const hero = {
   },
 } as const;
 
+export const footer = {
+  // Update manually each January.
+  copyrightYear: 2026,
+  ownerName: "JOE BAZZ",
+  backToTopLabel: "Back to top",
+} as const;
+
 export const portrait: {
   src: string | null;
   alt: string;
