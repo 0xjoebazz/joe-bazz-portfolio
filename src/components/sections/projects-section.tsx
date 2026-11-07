@@ -1,13 +1,9 @@
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Button } from "@/components/ui/button";
-import { ProjectCard } from "@/components/ui/project-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/motion/reveal";
-import {
-  StaggerList,
-  StaggerListItem,
-} from "@/components/motion/stagger";
+import { ProjectsBrowser } from "@/components/sections/projects-browser";
 import { projects, projectsSection } from "@/content/projects";
 
 function ProjectsComingSoon() {
@@ -57,13 +53,12 @@ export function ProjectsSection() {
               <ProjectsComingSoon />
             </Reveal>
           ) : (
-            <StaggerList className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {projects.map((project) => (
-                <StaggerListItem key={project.id} className="min-w-0">
-                  <ProjectCard project={project} />
-                </StaggerListItem>
-              ))}
-            </StaggerList>
+            <Reveal>
+              <ProjectsBrowser
+                projects={projects}
+                emptyCategoryMessage={projectsSection.emptyCategoryMessage}
+              />
+            </Reveal>
           )}
         </div>
       </Container>
