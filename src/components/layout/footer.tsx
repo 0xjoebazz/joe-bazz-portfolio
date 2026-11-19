@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className="border-t border-subtle bg-background/30">
       <Reveal duration={0.4} distance={12}>
-        <Container className="py-8 sm:py-10">
+        <Container className="pt-8 pb-24 sm:pt-10 sm:pb-24">
           <div className="grid min-w-0 gap-8 md:grid-cols-2 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
             <div className="min-w-0">
               <a

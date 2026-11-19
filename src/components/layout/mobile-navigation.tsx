@@ -62,7 +62,7 @@ export function MobileNavigation() {
               <a
                 href={href}
                 onClick={() => setIsOpen(false)}
-                className="flex min-h-11 items-center rounded-lg px-4 text-foreground hover:bg-surface hover:text-accent"
+                className="nav-link flex min-h-11 items-center rounded-lg px-4 font-semibold text-foreground hover:bg-surface hover:text-accent"
               >
                 {label}
               </a>

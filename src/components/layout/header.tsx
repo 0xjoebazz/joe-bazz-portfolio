@@ -33,7 +33,7 @@ export function Header() {
               <a
                 key={href}
                 href={href}
-                className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm text-muted hover:text-accent"
+                className="nav-link inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-muted hover:text-accent"
               >
                 {label}
               </a>

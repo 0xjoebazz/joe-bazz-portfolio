@@ -7,8 +7,20 @@ export type SocialLink = {
   icon: BrandIconKey;
 };
 
+export type WhatsAppSetting = {
+  phone: string;
+  message: string;
+  label: string;
+};
+
 export const contact = {
   email: "enochjosiah10@gmail.com",
+  whatsapp: {
+    phone: "2348146651906",
+    message:
+      "Hello Enoch, I found your portfolio and I'd like to discuss a project.",
+    label: "Chat on WhatsApp",
+  } satisfies WhatsAppSetting,
   socials: [
     {
       label: "GitHub",

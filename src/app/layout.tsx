@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { CursorGlow } from "@/components/effects/cursor-glow";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-background font-body text-foreground">
         <CursorGlow />
         <div className="relative z-10 min-h-full">{children}</div>
+        <WhatsAppButton />
       </body>
     </html>
   );
