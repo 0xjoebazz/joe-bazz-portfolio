@@ -3,7 +3,8 @@ import { Container } from "@/components/layout/container";
 import { MobileNavigation } from "@/components/layout/mobile-navigation";
 import { LogoSparkles } from "@/components/effects/logo-sparkles";
 import { Reveal } from "@/components/motion/reveal";
-import { logo, navLinks } from "@/content/site";
+import { Button } from "@/components/ui/button";
+import { logo, navCta, navLinks } from "@/content/site";
 
 export function Header() {
   return (
@@ -29,15 +30,23 @@ export function Header() {
             aria-label="Primary"
             className="hidden items-center gap-1 md:flex"
           >
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={href}
-                href={href}
-                className="nav-link inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-muted hover:text-accent"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks
+              .filter(({ href }) => href !== navCta.href)
+              .map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="nav-link inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-muted hover:text-accent"
+                >
+                  {label}
+                </a>
+              ))}
+            <Button
+              href={navCta.href}
+              className="ml-1 shrink-0 px-4 py-2 text-sm leading-tight focus-visible:transition-[background-color,color]"
+            >
+              {navCta.label}
+            </Button>
           </nav>
           <MobileNavigation />
         </Container>

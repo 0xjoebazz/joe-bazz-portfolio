@@ -22,6 +22,11 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ] satisfies readonly NavLink[];
 
+export const navCta = {
+  label: "Let's Talk",
+  href: "#contact",
+} satisfies NavLink;
+
 export const hero = {
   greeting: "Hi, I'm Enoch Josiah.",
   supportingHeadline: "I bring ideas to life through code and design.",

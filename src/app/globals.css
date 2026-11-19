@@ -7,7 +7,7 @@
   --surface: #0a1822;
   --accent: #20e6ff;
   --accent-secondary: #00bcd4;
-  --neon-purple: #b14dff;
+  --nav-underline: #6BE7FB;
   --whatsapp: #25d366;
   --glow-purple: #8b5cf6;
   --foreground: #f2f7fa;
@@ -22,7 +22,7 @@
   --color-surface: var(--surface);
   --color-accent: var(--accent);
   --color-accent-secondary: var(--accent-secondary);
-  --color-neon-purple: var(--neon-purple);
+  --color-nav-underline: var(--nav-underline);
   --color-whatsapp: var(--whatsapp);
   --color-glow-purple: var(--glow-purple);
   --color-foreground: var(--foreground);
@@ -100,9 +100,9 @@
   bottom: 0.25rem;
   height: 2px;
   border-radius: 9999px;
-  background-color: var(--neon-purple);
+  background-color: var(--nav-underline);
   box-shadow: 0 0 10px
-    color-mix(in srgb, var(--neon-purple) 55%, transparent);
+    color-mix(in srgb, var(--nav-underline) 55%, transparent);
   opacity: 0;
   transform: scaleX(0);
   transform-origin: left;

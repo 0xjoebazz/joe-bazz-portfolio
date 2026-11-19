@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { navLinks } from "@/content/site";
+import { Button } from "@/components/ui/button";
+import { navCta, navLinks } from "@/content/site";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,17 +58,28 @@ export function MobileNavigation() {
         className="absolute right-0 top-full z-50 mt-2 w-[min(20rem,calc(100vw-2rem))] rounded-xl border border-subtle bg-background-secondary/95 p-2 shadow-2xl backdrop-blur-md"
       >
         <ul className="flex flex-col">
-          {navLinks.map(({ label, href }) => (
-            <li key={href}>
-              <a
-                href={href}
-                onClick={() => setIsOpen(false)}
-                className="nav-link flex min-h-11 items-center rounded-lg px-4 font-semibold text-foreground hover:bg-surface hover:text-accent"
-              >
-                {label}
-              </a>
-            </li>
-          ))}
+          {navLinks
+            .filter(({ href }) => href !== navCta.href)
+            .map(({ label, href }) => (
+              <li key={href}>
+                <a
+                  href={href}
+                  onClick={() => setIsOpen(false)}
+                  className="nav-link flex min-h-11 items-center rounded-lg px-4 font-semibold text-foreground hover:bg-surface hover:text-accent"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          <li className="mt-2 border-t border-subtle pt-2">
+            <Button
+              href={navCta.href}
+              onClick={() => setIsOpen(false)}
+              className="w-full focus-visible:transition-[background-color,color]"
+            >
+              {navCta.label}
+            </Button>
+          </li>
         </ul>
       </nav>
     </div>
